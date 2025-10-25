@@ -1,0 +1,7 @@
+### Get Categori
+GET http://localhost:4004/odata/v4/catalog/Categories
+Authorization: Bearer 
+Content-Type: application/json
+
+###
+GET http://localhost:4004/odata/v4/catalog/Products

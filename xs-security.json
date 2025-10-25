@@ -1,0 +1,46 @@
+{
+  "xsappname": "myNorthwindApp-auth",
+  "tenant-mode": "dedicated",
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.Viewer",
+      "description": "Scope to view data"
+    },
+    {
+      "name": "$XSAPPNAME.Admin",
+      "description": "Scope to administer data"
+    }
+  ],
+  "role-templates": [
+    {
+      "name": "Viewer",
+      "description": "Read-only user",
+      "scope-references": [
+        "$XSAPPNAME.Viewer"
+      ]
+    },
+    {
+      "name": "Admin",
+      "description": "Administrative user",
+      "scope-references": [
+        "$XSAPPNAME.Admin"
+      ]
+    }
+  ],
+  "role-collections": [
+    {
+      "name": "CAP Viewer PRODUCTION",
+      "description": "Viewer role collection",
+      "role-template-references": [
+        "$XSAPPNAME.Viewer"
+      ]
+    },
+    {
+      "name": "CAP Admin PRODUCTION",
+      "description": "Admin role collection",
+      "role-template-references": [
+        "$XSAPPNAME.Admin"
+      ]
+    }
+  ]
+}

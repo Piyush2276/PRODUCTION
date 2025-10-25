@@ -1,0 +1,50 @@
+{
+  "name": "PRODUCTION",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap-cloud-sdk/connectivity": "^3",
+    "@sap-cloud-sdk/http-client": "^3",
+    "@sap-cloud-sdk/resilience": "^3",
+    "@sap/approuter": "^20.8.1",
+    "@sap/cds": "^9.3.1",
+    "@sap/cds-odata-v2-adapter-proxy": "^1.9.21",
+    "@cap-js/cds-types": "^0.13.0",
+    "@sap/cds-dk": ">=8",
+    "cors": "^2.8.5",
+    "express": "^4"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    
+    "@cap-js/sqlite": "^2"
+  },
+  "scripts": {
+    "start": "cds-serve"
+  },
+  "cds": {
+    "requires": {
+      
+      "auth": {
+        "kind": "dummy"
+      },
+      "northwind_Api_Service": {
+        "kind": "odata",
+        "model": "srv/external/northwind-Api-Service",
+        "credentials": {
+          "[production]": {
+            "url": "https://services.odata.org/v4/northwind/northwind.svc"
+          },
+          "[development]": {
+            "url": "https://services.odata.org/v4/northwind/northwind.svc"
+          }
+        }
+      }
+    }
+  }
+}
